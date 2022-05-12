@@ -61,14 +61,11 @@ METHODS_WITH_CORRECT_ARGUMENTS = [
 
 
 @pytest.mark.parametrize(
-    'additional_argument', [True]
-)
-@pytest.mark.parametrize(
     'api_database_method, arguments',
     METHODS_WITH_CORRECT_ARGUMENTS
 )
-def test_run_method_with_additional_argument(node, api_database_method, arguments, additional_argument):
-    getattr(node.api.database, api_database_method)(**arguments, arg=additional_argument)
+def test_run_method_with_additional_argument(node, api_database_method, arguments):
+    getattr(node.api.database, api_database_method)(**arguments, arg=True)
 
 
 @pytest.mark.parametrize(
