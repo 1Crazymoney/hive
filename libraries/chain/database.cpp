@@ -4506,7 +4506,7 @@ void database::process_genesis_accounts()
     , account_idx.end()
     , [&]( const account_object& obj ){
         push_virtual_operation(
-          account_created_operation(obj.name, "", asset(0, VESTS_SYMBOL), asset(0, VESTS_SYMBOL) ) );
+          account_created_operation(obj.name, obj.name, asset(0, VESTS_SYMBOL), asset(0, VESTS_SYMBOL) ) );
       }
   );
   _current_trx_in_block = trx_in_block_prev;
